@@ -19,9 +19,9 @@
 # build of the emulator, but all those aspects can be overridden
 # in inherited configurations.
 
+# zrm625 (Wi-Fi-only river): WAPPushManager (SMS WAP push) removed.
 PRODUCT_PACKAGES := \
-    libfwdlockengine \
-    WAPPushManager
+    libfwdlockengine
 
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \

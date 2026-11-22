@@ -32,13 +32,14 @@ $(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
 $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
 
+# zrm625 (Wi-Fi-only river): removed the phone stack (Telecom, TeleService,
+# TelephonyProvider, MmsService, BlockedNumberProvider, SimAppDialog) and
+# printing (PrintSpooler, BuiltInPrintService, PrintRecommendationService).
 PRODUCT_PACKAGES += \
     android.software.window_magnification.prebuilt.xml \
     BasicDreams \
-    BlockedNumberProvider \
     BluetoothMidiService \
     BookmarkProvider \
-    BuiltInPrintService \
     CalendarProvider \
     cameraserver \
     CameraExtensionsProxy \
@@ -56,30 +57,17 @@ PRODUCT_PACKAGES += \
     KeyChain \
     librs_jni \
     ManagedProvisioning \
-    MmsService \
     MtpService \
     MusicFX \
     PacProcessor \
     preinstalled-packages-platform-handheld-system.xml \
-    PrintRecommendationService \
-    PrintSpooler \
     ProxyHandler \
     screenrecord \
     SecureElement \
     SharedStorageBackup \
-    SimAppDialog \
-    Telecom \
-    TeleService \
     UserDictionaryProvider \
     VpnDialogs \
     vr \
-
-# Choose the correct products based on HSUM status
-ifeq ($(PRODUCT_USE_HSUM),true)
-  PRODUCT_PACKAGES += TelephonyProviderHsum
-else
-  PRODUCT_PACKAGES += TelephonyProvider
-endif
 
 PRODUCT_PACKAGES += $(RELEASE_PACKAGE_VIRTUAL_CAMERA)
 # Set virtual_camera_service_enabled soong config variable based on the
@@ -91,7 +79,6 @@ PRODUCT_SYSTEM_SERVER_APPS += \
     FusedLocation \
     InputDevices \
     KeyChain \
-    Telecom \
 
 PRODUCT_PACKAGES += framework-audio_effects.xml
 
