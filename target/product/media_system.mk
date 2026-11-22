@@ -20,13 +20,13 @@
 # choose base_system.mk.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base_system.mk)
 
+# zrm625 (river): CompanionDeviceManager (watch and wearable pairing) removed.
 PRODUCT_PACKAGES += \
     android.software.webview.prebuilt.xml \
     com.android.future.usb.accessory \
     com.android.mediadrm.signer \
     com.android.media.remotedisplay \
     com.android.media.remotedisplay.xml \
-    CompanionDeviceManager \
     drmserver \
     fsck.f2fs \
     HTMLViewer \

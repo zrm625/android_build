@@ -35,6 +35,7 @@ $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
 # zrm625 (Wi-Fi-only river): removed the phone stack (Telecom, TeleService,
 # TelephonyProvider, MmsService, BlockedNumberProvider, SimAppDialog) and
 # printing (PrintSpooler, BuiltInPrintService, PrintRecommendationService).
+# Also ManagedProvisioning (work profiles and company-managed setup).
 PRODUCT_PACKAGES += \
     android.software.window_magnification.prebuilt.xml \
     BasicDreams \
@@ -56,7 +57,6 @@ PRODUCT_PACKAGES += \
     InputDevices \
     KeyChain \
     librs_jni \
-    ManagedProvisioning \
     MtpService \
     MusicFX \
     PacProcessor \
