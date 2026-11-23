@@ -49,8 +49,8 @@ ifeq ($(LINEAGE_BUILD),)
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 endif
 
-# Get a list of languages.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+# zrm625 (river): English only. languages_full.mk is not inherited, so
+# PRODUCT_LOCALES stays en_US and aapt drops other languages from every app.
 
 # Get everything else from the parent package
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
