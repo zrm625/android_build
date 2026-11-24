@@ -265,7 +265,6 @@ PRODUCT_PACKAGES += \
     screencap \
     sdcard \
     secdiscard \
-    SecureElement \
     selinux_policy_system \
     sensorservice \
     service \
