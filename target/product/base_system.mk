@@ -493,7 +493,9 @@ PRODUCT_PACKAGES += init.zygote32.rc
 PRODUCT_VENDOR_PROPERTIES += ro.zygote?=zygote32
 
 PRODUCT_SYSTEM_PROPERTIES += debug.atrace.tags.enableflags=0
-PRODUCT_SYSTEM_PROPERTIES += persist.traced.enable=1
+# river: Perfetto's traced and traced_probes off by default (about 3 MB
+# resident). setprop persist.traced.enable 1 turns them on for a trace.
+PRODUCT_SYSTEM_PROPERTIES += persist.traced.enable=0
 PRODUCT_SYSTEM_PROPERTIES += ro.surface_flinger.game_default_frame_rate_override=60
 
 # Include kernel configs.
