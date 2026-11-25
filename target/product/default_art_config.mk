@@ -114,8 +114,11 @@ else
 
 endif
 
-# Check if the build supports NFC apex or not
-ifeq ($(RELEASE_PACKAGE_NFC_STACK),NfcNci)
+# River's opt-in hardware-free build keeps the NFC Java APIs on the platform
+# boot classpath because the framework registers their wrappers at boot.
+ifeq ($(TARGET_PRODUCT):$(RIVER_WITHOUT_NFC),lineage_river:true)
+    PRODUCT_BOOT_JARS += framework-nfc
+else ifeq ($(RELEASE_PACKAGE_NFC_STACK),NfcNci)
     PRODUCT_BOOT_JARS += \
         framework-nfc
 else
