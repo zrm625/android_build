@@ -63,7 +63,6 @@ PRODUCT_PACKAGES += \
     preinstalled-packages-platform-handheld-system.xml \
     ProxyHandler \
     screenrecord \
-    SecureElement \
     SharedStorageBackup \
     UserDictionaryProvider \
     VpnDialogs \
